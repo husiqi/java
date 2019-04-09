@@ -6,19 +6,30 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.xml.transform.OutputKeys;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class HelloWorldController {
-
     @Autowired
     UserRepository userRepository;
+    @RequestMapping("/helloword")
+    //制定访问路径可加GET参数(？后面加参数)
+    public User helloword(@RequestParam(value ="name",defaultValue ="胡思琦" ) String name) {
+
+        //User user1= String.format(template, name);
+        User user1=new User();
+        user1.setName(name);
+        userRepository.save(user1);
+        //return new User (id,String.format(template, name));
+        return user1;
+    }
+
 
     @RequestMapping("/hello")
     //制定访问路径可加GET参数(？后面加参数)
     public User index(@RequestParam("id") Integer id) {
 
         User user1 = userRepository.findById(id).orElse(null);
-
         return user1;
     }
 

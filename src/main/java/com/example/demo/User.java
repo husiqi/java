@@ -50,21 +50,21 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
+    public String getName(String format) {
         return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+       this.name = name;
     }
 
-//    @Override
-//    public String toString() {
-//        return "User{" +
-//                "id=" + id +
-//                ", name='" + name + '\'' +
-//                ", age=" + age +
-//                ", sex='" + sex + '\'' +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                ", sex='" + sex + '\'' +
+                '}';
+    }
 }
