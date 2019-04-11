@@ -1,10 +1,8 @@
-package com.example.demo;
+package com.example.demo.Article;
 
-import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.xml.transform.OutputKeys;
 import java.util.List;
 
 @RestController
@@ -29,14 +27,26 @@ public class ArticleController {
         return list1;
     }
 
-
-
-    @PostMapping(value = "/article" )
-    public String postSaveUser(@RequestBody Article user){
-//        User user = new User();
-//        user.setName(name);
-        //      user.setSex("");
-        articleRepository.save(user);
-        return "插入成功";
+    @RequestMapping(value = "/article/list" )
+    /*
+        展示全部文章接口
+     */
+    public List<Article> listArticle(){
+        List<Article> list=articleRepository.findAll();
+        return list;
     }
+
+
+
+    @RequestMapping(value = "/article/insert" )
+    /*
+        插入接口
+     */
+    public String postSaveArticle(@RequestBody Article user){
+        articleRepository.save(user);
+        return "200";
+    }
+
+
+
 }
