@@ -1,5 +1,7 @@
-package com.example.demo.Article;
+package com.example.demo.controller;
 
+import com.example.demo.repository.ArticleRepository;
+import com.example.demo.model.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +12,7 @@ import java.util.List;
 public class ArticleController {
     @Autowired
     //实例化这个接口，因为接口不能NEW  所以用这个方法进行调用。此处实例化后下方可以这个借口里面定义的东西
-    ArticleRepository articleRepository;
+            ArticleRepository articleRepository;
     @RequestMapping("/list1")
     /*   @RequestMapping  注释确保HTTP请求到/greeting映射到greeting()方法。  主要用于制定访问地址
      *   默认可以映射所有的HTTP请求，不用制定GET或POST，可以是用method=GET   来缩短范围制定GET方式

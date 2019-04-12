@@ -1,12 +1,11 @@
-package com.example.demo;
+package com.example.demo.controller;
 
-import org.springframework.beans.factory.annotation.Autowire;
+import com.example.demo.repository.UserRepository;
+import com.example.demo.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.xml.transform.OutputKeys;
 import java.util.List;
-import java.util.concurrent.atomic.AtomicLong;
 
 @RestController
 public class HelloWorldController {
@@ -23,6 +22,16 @@ public class HelloWorldController {
         //return new User (id,String.format(template, name));
         return user1;
     }
+
+    @RequestMapping("/")
+    /**
+     * 默认访问页面写法，放在启动文件中无法启动不明原因
+     *
+     */
+    public String Hi() {
+        return "Hello Word !!";
+    }
+
 
 
     @RequestMapping("/hello")

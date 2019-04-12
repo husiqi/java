@@ -9,7 +9,7 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/hu?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
     password: root
-    initialization-mode: always #执行根目录下面data.sql初始化数据
+    initialization-mode: always #
     continue-on-error: false
 server:
-  port: 8088
+  port: 8080

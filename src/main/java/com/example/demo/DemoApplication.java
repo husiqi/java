@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
+
 /*  官方文档翻译，暂不细究
     @SpringBootApplication是一个方便的注释，它添加了以下所有内容：
 
@@ -24,5 +25,6 @@ public class DemoApplication {
         //运行spring的代码，默认生成文件 后期在学习
         SpringApplication.run(DemoApplication.class, args);
     }
+
 
 }

@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,13 +9,15 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 @Table()
 @Entity
-public class One {
+public class Article {
+
     @Id
     @GeneratedValue(strategy = IDENTITY)  //创建表的时候ID自增
     Integer id;
     String title;
-    Integer type;
+    String content;
     String top;
+
 
     public Integer getId() {
         return id;
@@ -33,12 +35,12 @@ public class One {
         this.title = title;
     }
 
-    public Integer getType() {
-        return type;
+    public String getContent() {
+        return content;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getTop() {
@@ -48,5 +50,6 @@ public class One {
     public void setTop(String top) {
         this.top = top;
     }
+
 
 }
